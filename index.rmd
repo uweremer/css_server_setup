@@ -50,7 +50,7 @@ Für die eigenen Instanzen hat man [root](https://de.wikipedia.org/wiki/Root-Kon
 
 Die [bwCloud](http://www.bw-cloud.org) steht allen MitarbeiterInnen und StudentInnen baden-württembergischer Universitäten nach einer kurzen Registrierung zur Verfügung (siehe [erste Schritte](https://www.bw-cloud.org/de/erste_schritte)). Danach kann man sich mit dem regulären ac-Account oder st-Account [anmelden](https://portal.bw-cloud.org/auth/login/?next=/). Die Instanzen sind personenbezogen und nicht an Funktionen oder Institutionen gekoppelt.
 
-Falls nach der Anmeldung keine verfügbaren Kontingente angezeigt werden, liegt das wahrscheinlich daran, dass die falsche Region ausgewählt ist. MitarbeiterInnen und StudentInnen der Universität Stuttgart erhalten ihr Kontingent über die Region Karlsruhe:
+Falls nach der Anmeldung keine verfügbaren Kontingente angezeigt werden, liegt das wahrscheinlich daran, dass die falsche Region ausgewählt ist. MitarbeiterInnen und StudentInnen der Universität Stuttgart erhalten ihr Kontingent über die Region Mannheim (Abweichungen möglich).
 
 ![Region auswählen](./Grafiken/Region.JPG) 
 
