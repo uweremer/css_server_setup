@@ -42,7 +42,7 @@ Verwaltet werden die Ressourcen und Instanzen mittels *Openstack*. Für den Anwe
 
 > "With great power comes great responsibility" 
 
-Für die eigenen Instanzen hat man [root](https://de.wikipedia.org/wiki/Root-Konto)-Rechte. Jede/r ist für seine Instanz selbst verantwortlich (und haftbar). Es gibt keinen Admin (außer einem Selbst), der in die jeweilige Instanz reinschaut und sie auf Sicherheitsprobleme prüft. Die Instanz steht mehr oder weniger auf freier Wildbahn im Internet. Wichtig ist daher, dass die [Firewall](https://de.wikipedia.org/wiki/Firewall) so offen wie nötig und so restriktiv wie möglich konfiguriert wird. Das ist aber über die Openstack-Umgebung sehr einfach und komfortabel zu erledigen (unten mehr).Man muss sicherstellen, dass alle sicherheitsrelevante Updates sofort eingespielt werden (kann man automatisieren, siehe unten). Außerdem sollte man sich generell zum Thema Linux Server absichern informieren. Passworte, Zugangsdaten und SSH-Schlüssel (nicht nur für den Server, sondern auch für Software, Code, API-Zugänge etc.) sind sicher zu verwahren und dürfen niemals in die Versionskontrolle (Github) gelangen. 
+Für die eigenen Instanzen hat man [root](https://de.wikipedia.org/wiki/Root-Konto)-Rechte. Jede/r ist für seine Instanz selbst verantwortlich (und haftbar). Es gibt keinen Admin (außer einem Selbst), der in die jeweilige Instanz reinschaut und sie auf Sicherheitsprobleme prüft. Die Instanz steht mehr oder weniger auf freier Wildbahn im Internet. Wichtig ist daher, dass die [Firewall](https://de.wikipedia.org/wiki/Firewall) so offen wie nötig und so restriktiv wie möglich konfiguriert wird. Das ist aber über die Openstack-Umgebung sehr einfach und komfortabel zu erledigen (über Sicherheitsgruppen). Man muss sicherstellen, dass alle sicherheitsrelevante Updates sofort eingespielt werden (kann man automatisieren, siehe unten). Außerdem sollte man sich generell zum Thema Linux Server absichern informieren. Passworte, Zugangsdaten und SSH-Schlüssel (nicht nur für den Server, sondern auch für Software, Code, API-Zugänge etc.) sind sicher zu verwahren und dürfen niemals in die Versionskontrolle (Github) gelangen. 
 
 
 ## Instanz anlegen
@@ -92,9 +92,9 @@ Aus Sicherheitsgründen sollten Updates per Cron-Job automatisiert werden (vgl. 
 ```
 sudo yum -y install yum-cron
 sudo nano /etc/yum/yum-cron.conf
-systemctl start yum-cron.service
+sudo systemctl start yum-cron.service
 #Prüfen ob Service läuft
-systemctl status yum-cron.service
+sudo systemctl status yum-cron.service
 ```
 
 
@@ -142,7 +142,7 @@ Detaillierte Anleitung [hier](https://rstudio.com/products/rstudio/download-serv
 [MariaDB](https://mariadb.org/) als SQL Datenbank mit `yum` installieren und konfigurieren. Schließlich bei Boot aktivieren:
 
 ```
-yum install mariadb-devel
+yum install mariadb-server mariadb-devel
 sudo systemctl enable mariadb
 sudo systemctl start mariadb
 sudo mysql_secure_installation
